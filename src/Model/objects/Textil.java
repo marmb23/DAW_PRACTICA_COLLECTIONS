@@ -12,4 +12,22 @@ public abstract class Textil extends Productes {
         super(preu, nom, codi_barres);
         this.composicio_textil = composicio_textil;
     }
+
+    public String getComposicio_textil() {
+        return composicio_textil;
+    }
+
+    public void setComposicio_textil(String composicio_textil) {
+        this.composicio_textil = composicio_textil;
+    }
+
+    @Override
+    public String toString() {
+        return "Textil{" +
+                "composicio_textil='" + composicio_textil + '\'' +
+                ", preu=" + preu +
+                ", nom='" + nom + '\'' +
+                ", codi_barres='" + codi_barres + '\'' +
+                '}';
+    }
 }
