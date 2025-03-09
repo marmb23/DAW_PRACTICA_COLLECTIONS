@@ -1,5 +1,4 @@
 package vista;
-import java.util.Scanner;
 
 public class Vista {
     public static void menuPrincipal() {

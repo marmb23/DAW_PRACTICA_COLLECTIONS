@@ -1,3 +1,8 @@
+import Model.objects.Alimentacio;
+import Model.objects.Electronica;
+import Model.objects.Textil;
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Controlador {
@@ -16,10 +21,10 @@ public class Controlador {
                     vista.Vista.menuIntroduirProducte();
                     break;
                 case 3:
-                    vista.Vista.menuPassarCaixa();
+                    // función para pasar por caja.
                     break;
                 case 4:
-                    vista.Vista.menuMostrarCarro();
+                    // mostrar carro de la compra
                     break;
                 case 0:
                     System.out.println("Fins aviat!");
@@ -61,15 +66,15 @@ public class Controlador {
             opcio = sc.nextInt();
             switch (opcio) {
                 case 1:
-                    // Función para mostrar el menú de introducir producto de alimentación.
+                    menuProducteAlimentacio();
                     // Función para introducir producto de alimentación.
                     break;
                 case 2:
-                    // Función para mostrar el menú de introducir producto de electronica
+                    menuProducteElectronica();
                     // Función para introducir producto de electroncia.
                     break;
                 case 3:
-                    /// Función para mostrar el menú de introducir producto textil.
+                    menuProducteTextil();
                     // Función para introducir producto textil.
                     break;
                 case 0:
@@ -81,7 +86,7 @@ public class Controlador {
         } while (opcio != 0);
     }
 
-    public static void menuProducteAlimentacio() {
+    public static Alimentacio menuProducteAlimentacio() {
         System.out.println("Afegir aliment");
         System.out.println("Nom del producte: ");
         String nom = sc.next();
@@ -89,6 +94,37 @@ public class Controlador {
         Float preu = sc.nextFloat();
         System.out.println("Codi de barres: ");
         String codi_barres = sc.next();
-        System.out.println("Data de caducitat (dd/mm/yyyy): ");
+        System.out.println("Data de caducitat (yyyy-mm-dd): ");
+        LocalDate data_caducitat = LocalDate.parse(sc.next());
+
+        return new Alimentacio(preu, nom, data_caducitat, codi_barres);
+    }
+
+    public static Electronica menuProducteElectronica() {
+        System.out.println("Afegir electrònica");
+        System.out.println("Nom del producte: ");
+        String nom = sc.next();
+        System.out.println("Preu del producte: ");
+        Float preu = sc.nextFloat();
+        System.out.println("Garantia (dies): ");
+        Integer dies_garantia = sc.nextInt();
+        System.out.println("Codi de barres: ");
+        String codi_barres = sc.next();
+
+        return new Electronica(preu, nom, dies_garantia, codi_barres);
+    }
+
+    public static Textil menuProducteTextil() {
+        System.out.println("Afegir tèxtil");
+        System.out.println("Nom del producte: ");
+        String nom = sc.next();
+        System.out.println("Preu del producte: ");
+        Float preu = sc.nextFloat();
+        System.out.println("Composició: ");
+        String composicio_textil = sc.next();
+        System.out.println("Codi de barres: ");
+        String codi_barres = sc.next();
+
+        return new Textil(preu, nom, composicio_textil, codi_barres);
     }
 }

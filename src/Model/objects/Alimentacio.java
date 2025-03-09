@@ -2,7 +2,7 @@ package Model.objects;
 import java.time.LocalDate;
 import java.time.Period;
 
-public abstract class Alimentacio extends Productes {
+public class Alimentacio extends Productes {
     LocalDate data_caducitat;
     /**
      * @param preu

@@ -1,7 +1,7 @@
 package Model.objects;
 import java.time.LocalDate;
 
-public abstract class Textil extends Productes {
+public class Textil extends Productes {
     String composicio_textil;
     /**
      * @param preu

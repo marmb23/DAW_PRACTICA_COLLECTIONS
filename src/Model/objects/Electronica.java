@@ -1,6 +1,6 @@
 package Model.objects;
 
-public abstract class Electronica extends Productes {
+public class Electronica extends Productes {
     Integer dies_garantia;
     /**
      * @param preu
