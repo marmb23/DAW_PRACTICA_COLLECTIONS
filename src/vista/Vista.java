@@ -1,6 +1,7 @@
 package vista;
 
 public class Vista {
+
     public static void menuPrincipal() {
         System.out.println("BENVINGUT/DA AL SAPAMERCAT");
         System.out.println("--------------------------");

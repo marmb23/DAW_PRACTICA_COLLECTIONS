@@ -1,9 +1,12 @@
 import Model.objects.Alimentacio;
 import Model.objects.Electronica;
 import Model.objects.Textil;
+import vista.Vista;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import static vista.Vista.menuPrincipal;
 
 public class Controlador {
     private static Scanner sc = new Scanner(System.in);
@@ -11,14 +14,14 @@ public class Controlador {
     public static void main(String[] args) {
         int opcio;
         do {
-            vista.Vista.menuPrincipal();
+            menuPrincipal();
             opcio = sc.nextInt();
             switch (opcio) {
                 case 1:
-                    vista.Vista.menuGestio();
+                    menuGestio();
                     break;
                 case 2:
-                    vista.Vista.menuIntroduirProducte();
+                    menuIntroduirProducte();
                     break;
                 case 3:
                     // función para pasar por caja.
@@ -38,7 +41,7 @@ public class Controlador {
     public static void menuGestio() {
         int opcio;
         do {
-            vista.Vista.menuGestio();
+            menuGestio();
             opcio = sc.nextInt();
             switch (opcio) {
                 case 1:
@@ -62,7 +65,7 @@ public class Controlador {
     public static void menuIntroduirProducte() {
         int opcio;
         do {
-            vista.Vista.menuIntroduirProducte();
+            menuIntroduirProducte();
             opcio = sc.nextInt();
             switch (opcio) {
                 case 1:
