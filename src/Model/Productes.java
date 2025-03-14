@@ -1,4 +1,4 @@
-package Model.objects;
+package Model;
 
 public abstract class Productes implements Comparable<Productes> {
     public double preu;
@@ -53,7 +53,6 @@ public abstract class Productes implements Comparable<Productes> {
                 ", codi_barres='" + codi_barres + '\'' +
                 '}';
     }
-
 
     public int compareTo(Productes altre) {
         return this.nom.compareTo(altre.nom);

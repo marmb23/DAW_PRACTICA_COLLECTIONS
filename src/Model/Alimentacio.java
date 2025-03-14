@@ -1,9 +1,12 @@
-package Model.objects;
+package Model;
+
 import java.time.LocalDate;
 import java.time.Period;
 
 public class Alimentacio extends Productes {
+
     LocalDate data_caducitat;
+
     /**
      * @param preu
      * @param nom

@@ -1,5 +1,4 @@
-package Model.objects;
-import java.time.LocalDate;
+package Model;
 
 public class Textil extends Productes {
     String composicio_textil;

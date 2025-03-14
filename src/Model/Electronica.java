@@ -1,7 +1,9 @@
-package Model.objects;
+package Model;
 
 public class Electronica extends Productes {
+
     Integer dies_garantia;
+
     /**
      * @param preu
      * @param nom
