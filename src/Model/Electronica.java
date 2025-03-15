@@ -1,6 +1,7 @@
 package Model;
+import Model.Model.*;
 
-public class Electronica extends Productes {
+public class Electronica extends Producte {
 
     Integer dies_garantia;
 
@@ -9,7 +10,7 @@ public class Electronica extends Productes {
      * @param nom
      * @param codi_barres
      */
-    public Electronica(double preu, String nom, Integer dies_garantia, String codi_barres) {
+    public Electronica(double preu, String nom, Integer dies_garantia, String codi_barres) throws NegatiuException, LimitCaractersException {
         super(preu, nom, codi_barres);
         this.dies_garantia = dies_garantia;
     }
@@ -22,17 +23,6 @@ public class Electronica extends Productes {
     // Setters
     public void setDies_garantia(Integer dies_garantia) {
         this.dies_garantia = dies_garantia;
-    }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Electronica{" +
-                "dies_garantia=" + dies_garantia +
-                ", preu=" + preu +
-                ", nom='" + nom + '\'' +
-                ", codi_barres='" + codi_barres + '\'' +
-                '}';
     }
 
     public double calcularPreuFinal() {

@@ -2,8 +2,9 @@ package Model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import Model.Model.*;
 
-public class Alimentacio extends Productes {
+public class Alimentacio extends Producte {
 
     LocalDate data_caducitat;
 
@@ -12,8 +13,11 @@ public class Alimentacio extends Productes {
      * @param nom
      * @param codi_barres
      */
-    public Alimentacio(double preu, String nom, LocalDate data_caducitat, String codi_barres) {
+    public Alimentacio(double preu, String nom, LocalDate data_caducitat, String codi_barres) throws NegatiuException, LimitCaractersException, DataCaducitatException {
         super(preu, nom, codi_barres);
+        if (data_caducitat.isBefore(LocalDate.now())) {
+            throw new DataCaducitatException("La data de caducitat no pot ser anterior a la data actual.");
+        }
         this.data_caducitat = data_caducitat;
     }
 
@@ -25,16 +29,6 @@ public class Alimentacio extends Productes {
     // Setters
     public void setData_caducitat(LocalDate data_caducitat) {
         this.data_caducitat = data_caducitat;
-    }
-
-    // toString
-    public String toString() {
-        return "Alimentacio{" +
-                "data_caducitat=" + data_caducitat +
-                ", preu=" + preu +
-                ", nom='" + nom + '\'' +
-                ", codi_barres='" + codi_barres + '\'' +
-                '}';
     }
 
     /**

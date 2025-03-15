@@ -1,6 +1,7 @@
 package Model;
+import java.util.Comparator;
 
-public class Textil extends Productes {
+public class Textil extends Producte implements Comparator<Textil> {
     String composicio_textil;
     /**
      * @param preu
@@ -22,18 +23,11 @@ public class Textil extends Productes {
         this.composicio_textil = composicio_textil;
     }
 
-    // toString
-    @Override
-    public String toString() {
-        return "Textil{" +
-                "composicio_textil='" + composicio_textil + '\'' +
-                ", preu=" + preu +
-                ", nom='" + nom + '\'' +
-                ", codi_barres='" + codi_barres + '\'' +
-                '}';
-    }
-
     public double calcularPreuFinal() {
         return preu;
+    }
+
+    public int compare(Textil t1, Textil t2) {
+        return t1.getComposicio_textil().compareTo(t2.getComposicio_textil());
     }
 }
