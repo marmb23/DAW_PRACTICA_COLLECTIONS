@@ -7,6 +7,9 @@ import static vista.Vista.*;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Classe Controlador
+ */
 public class Controlador {
     private static final Scanner scanner = new Scanner(System.in);
     /**

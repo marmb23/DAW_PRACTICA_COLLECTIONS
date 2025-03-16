@@ -1,6 +1,9 @@
 package Model.Objectes;
 import java.util.Queue;
 
+/**
+ * Classe Tiquet que conté una cua de productes i el preu total dels productes del tiquet
+ */
 public class Tiquet {
     private Queue<Producte> producte;
 

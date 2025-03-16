@@ -2,6 +2,9 @@ package Model.Objectes;
 import Model.Excepcions.LimitCaractersException;
 import Model.Excepcions.NegatiuException;
 
+/**
+ * Classe que defineix un producte d'electrònica
+ */
 public class Electronica extends Producte {
 
     Integer dies_garantia;

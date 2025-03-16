@@ -2,6 +2,9 @@ package Model.Objectes;
 import java.util.Comparator;
 import Model.Excepcions.LimitCaractersException;
 
+/**
+ * Classe Tèxtil que hereta de la classe Producte i implementa la interfície Comparator
+ */
 public class Textil extends Producte implements Comparator<Textil> {
     String composicio_textil;
 

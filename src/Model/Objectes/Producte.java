@@ -2,6 +2,9 @@ package Model.Objectes;
 import Model.Excepcions.LimitCaractersException;
 import Model.Excepcions.NegatiuException;
 
+/**
+ * Classe abstracta Producte
+ */
 public abstract class Producte implements Comparable<Producte> {
     public String nom;
     public double preu;

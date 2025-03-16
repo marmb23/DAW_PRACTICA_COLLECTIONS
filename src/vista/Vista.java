@@ -2,6 +2,9 @@ package vista;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+/**
+ * Classe Vista
+ */
 public class Vista {
     private static final Scanner scanner = new Scanner(System.in);
 

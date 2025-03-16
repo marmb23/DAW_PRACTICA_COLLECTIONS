@@ -3,6 +3,9 @@ import java.time.LocalDate;
 import java.time.Period;
 import Model.Excepcions.DataCaducitatException;
 
+/**
+ * Classe Alimentacio
+ */
 public class Alimentacio extends Producte {
 
     public LocalDate data_caducitat;

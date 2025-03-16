@@ -4,6 +4,9 @@ import Model.Objectes.*;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Model de l'aplicació que conté les llistes de productes, carro de la compra i tiquets de compra.
+ */
 public class Model {
     //############################################### LLISTES ###############################################
     public static List<Producte> magatzem = new ArrayList<>();
