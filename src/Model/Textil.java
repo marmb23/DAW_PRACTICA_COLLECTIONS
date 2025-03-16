@@ -4,12 +4,14 @@ import java.util.Comparator;
 public class Textil extends Producte implements Comparator<Textil> {
     String composicio_textil;
     /**
-     * @param preu
+     * 
      * @param nom
+     * @param preu
+     * @param composicio_textil
      * @param codi_barres
      */
-    public Textil(double preu, String nom, String composicio_textil, String codi_barres) {
-        super(preu, nom, codi_barres);
+    public Textil(String nom, double preu, String composicio_textil, String codi_barres) {
+        super(nom, preu, codi_barres);
         this.composicio_textil = composicio_textil;
     }
 

@@ -2,8 +2,8 @@ package Model;
 import Model.Model.*;
 
 public abstract class Producte implements Comparable<Producte> {
-    public double preu;
     public String nom;
+    public double preu;
     public String codi_barres;
 
     /**
@@ -11,21 +11,33 @@ public abstract class Producte implements Comparable<Producte> {
      * @param nom
      * @param codi_barres
      */
-    public Producte(double preu, String nom, String codi_barres) throws NegatiuException, LimitCaractersException {
-        if (preu < 0) {
-            throw new NegatiuException("El preu no pot ser negatiu.");
+    public Producte(String nom, double preu, String codi_barres) throws NegatiuException, LimitCaractersException {
+        try {
+            if (nom.length() < 3) {
+                throw new LimitCaractersException("El nom del producte ha de tenir com a mínim 3 caràcters.");
+            } else if (nom.length() > 50) {
+                throw new LimitCaractersException("El nom del producte ha de tenir com a màxim 50 caràcters.");
+            }
+            this.nom = nom;
+        } catch (LimitCaractersException e) {
+            System.out.println(e.getMessage());
         }
-        this.preu = preu;
-        if (nom.length() < 3) {
-            throw new LimitCaractersException("El nom del producte ha de tenir com a mínim 3 caràcters.");
-        } else if (nom.length() > 50) {
-            throw new LimitCaractersException("El nom del producte ha de tenir com a màxim 50 caràcters.");
+        try {
+            if (preu < 0) {
+                throw new NegatiuException("El preu no pot ser negatiu.");
+            }
+            this.preu = preu;
+        } catch (NegatiuException e) {
+            System.out.println(e.getMessage());
         }
-        this.nom = nom;
-        if (codi_barres.length() != 13) {
-            throw new LimitCaractersException("El codi de barres ha de tenir 13 caràcters.");
-        }
-        this.codi_barres = codi_barres;
+        try {
+            if (codi_barres.length() != 13) {
+                throw new LimitCaractersException("El codi de barres ha de tenir 13 caràcters.");
+            }
+            this.codi_barres = codi_barres;
+        } catch (LimitCaractersException e) {
+                System.out.println(e.getMessage());
+            }
     }
 
     // Getters

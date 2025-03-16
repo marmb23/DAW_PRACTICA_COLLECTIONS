@@ -10,8 +10,8 @@ public class Electronica extends Producte {
      * @param nom
      * @param codi_barres
      */
-    public Electronica(double preu, String nom, Integer dies_garantia, String codi_barres) throws NegatiuException, LimitCaractersException {
-        super(preu, nom, codi_barres);
+    public Electronica(String nom, double preu, Integer dies_garantia, String codi_barres) throws NegatiuException, LimitCaractersException {
+        super(nom, preu, codi_barres);
         this.dies_garantia = dies_garantia;
     }
 

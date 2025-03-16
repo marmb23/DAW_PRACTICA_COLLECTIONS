@@ -1,12 +1,12 @@
 package Controlador;
-import Model.Producte;
+import Model.*;
+import static Model.Alimentacio.getData_caducitat;
 import static Model.Model.*;
 import static vista.Vista.*;
 import java.util.*;
 
 public class Controlador {
     private static Scanner scanner = new Scanner(System.in);
-    public static Queue<Producte> carro_compra = new LinkedList<>();
 
     public static void main(String[] args) throws NegatiuException, LimitCaractersException, LimitProductesException {
         int opcio;
@@ -42,10 +42,10 @@ public class Controlador {
             opcio = scanner.nextInt();
             switch (opcio) {
                 case 1:
-                    // Llamar función que muestre la caducidad de los productos.
+                    getData_caducitat();
                     break;
                 case 2:
-                    // Llamar función que muestre los tickets de compra.
+                    generarTiquet();
                     break;
                 case 3:
                     // Llamar función que muestre la composición textil de los productos.
@@ -65,16 +65,28 @@ public class Controlador {
             menuIntroduirProducte();
             opcio = scanner.nextInt();
             switch (opcio) {
+                // Alimentacio
                 case 1:
-                    menuProducteAlimentacio();
+                    solicitarNomProducte();
+                    solicitarPreuProducte();
+                    solicitarCodiBarres();
+                    solicitarDataCaducitat();
                     // Función para introducir producto de alimentación.
                     break;
+                    // Textil
                 case 2:
-                    menuProducteElectronica();
-                    // Función para introducir producto de electroncia.
+                    solicitarNomProducte();
+                    solicitarPreuProducte();
+                    solicitarComposicioTextil();
+                    solicitarCodiBarres();
+                    // Función para introducir producto de electronica.
                     break;
+                    // Electronica
                 case 3:
-                    menuProducteTextil();
+                    solicitarNomProducte();
+                    solicitarPreuProducte();
+                    solicitarDiesGarantia();
+                    solicitarCodiBarres();
                     // Función para introducir producto textil.
                     break;
                 case 0:

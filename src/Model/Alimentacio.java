@@ -6,23 +6,27 @@ import Model.Model.*;
 
 public class Alimentacio extends Producte {
 
-    LocalDate data_caducitat;
+    static LocalDate data_caducitat;
 
     /**
      * @param preu
      * @param nom
      * @param codi_barres
      */
-    public Alimentacio(double preu, String nom, LocalDate data_caducitat, String codi_barres) throws NegatiuException, LimitCaractersException, DataCaducitatException {
-        super(preu, nom, codi_barres);
-        if (data_caducitat.isBefore(LocalDate.now())) {
-            throw new DataCaducitatException("La data de caducitat no pot ser anterior a la data actual.");
+    public Alimentacio(String nom, double preu, LocalDate data_caducitat, String codi_barres) throws NegatiuException, LimitCaractersException, DataCaducitatException {
+        super(nom, preu, codi_barres);
+        try {
+            if (data_caducitat.isBefore(LocalDate.now())) {
+                throw new DataCaducitatException("La data de caducitat no pot ser anterior a la data actual.");
+            }
+            this.data_caducitat = data_caducitat;
+        } catch (DataCaducitatException e) {
+            System.out.println(e.getMessage());
         }
-        this.data_caducitat = data_caducitat;
     }
 
     // Getters
-    public LocalDate getData_caducitat() {
+    public static LocalDate getData_caducitat() {
         return data_caducitat;
     }
 

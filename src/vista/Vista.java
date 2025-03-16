@@ -32,50 +32,44 @@ public class Vista {
         System.out.println("-----------PRODUCTE----------");
         System.out.println("-----------------------------");
         System.out.println("1. Introduir producte d'alimentació.");
-        System.out.println("2. Introduir producte d'electrònica.");
-        System.out.println("3. Introduir producte tèxtil.");
+        System.out.println("2. Introduir producte tèxtil.");
+        System.out.println("3. Introduir producte d'electrònica.");
         System.out.println("0. Tornar enrere.");
     }
 
-    public static Alimentacio menuProducteAlimentacio() throws NegatiuException, LimitCaractersException, DataCaducitatException {
-        System.out.println("Afegir aliment");
+    // Metodos para solicitar los datos de los productos al usuario
+    public static String solicitarNomProducte() {
         System.out.println("Nom del producte: ");
-        String nom = scanner.next();
+        return scanner.next();
+    }
+
+    public static double solicitarPreuProducte() {
         System.out.println("Preu del producte: ");
-        Float preu = scanner.nextFloat();
+        return scanner.nextDouble();
+    }
+
+    public static String solicitarCodiBarres() {
         System.out.println("Codi de barres: ");
-        String codi_barres = scanner.next();
+        return scanner.next();
+    }
+
+    public static LocalDate solicitarDataCaducitat() {
         System.out.println("Data de caducitat (yyyy-mm-dd): ");
-        LocalDate data_caducitat = LocalDate.parse(scanner.next());
-
-        return new Alimentacio(preu, nom, data_caducitat, codi_barres);
+        return LocalDate.parse(scanner.next());
     }
 
-    public static Electronica menuProducteElectronica() throws NegatiuException, LimitCaractersException {
-        System.out.println("Afegir electrònica");
-        System.out.println("Nom del producte: ");
-        String nom = scanner.next();
-        System.out.println("Preu del producte: ");
-        Float preu = scanner.nextFloat();
-        System.out.println("Garantia (dies): ");
-        Integer dies_garantia = scanner.nextInt();
-        System.out.println("Codi de barres: ");
-        String codi_barres = scanner.next();
-
-        return new Electronica(preu, nom, dies_garantia, codi_barres);
+    public static String solicitarDiesGarantia() {
+        System.out.println("Dies de garantia: ");
+        return scanner.next();
     }
 
-    public static Textil menuProducteTextil() {
-        System.out.println("Afegir tèxtil");
-        System.out.println("Nom del producte: ");
-        String nom = scanner.next();
-        System.out.println("Preu del producte: ");
-        Float preu = scanner.nextFloat();
-        System.out.println("Composició: ");
-        String composicio_textil = scanner.next();
-        System.out.println("Codi de barres: ");
-        String codi_barres = scanner.next();
+    public static String solicitarComposicioTextil() {
+        System.out.println("Composició tèxtil: ");
+        return scanner.next();
+    }
 
-        return new Textil(preu, nom, composicio_textil, codi_barres);
+    // Metodo para mostrar los datos una vez introducidos
+    public static void mostrarProducte(Producte producte) {
+        System.out.println("Producte afegit: " + producte);
     }
 }
