@@ -1,5 +1,4 @@
-public class Main {
-    public static void main(String[] args) {
-        //Iniciar el programa
-    }
+
+public static void main() {
+    Controlador.Controlador.Menu();
 }
